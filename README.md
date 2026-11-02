@@ -170,4 +170,4 @@ As configurações auditam `/` e `/nft/emerald-ape-042`, três vezes em mobile e
 
 No mobile, performance permanece abaixo da meta de 90 devido principalmente à inicialização dos runtimes obrigatórios do MSW e Socket.IO na thread principal. A auditoria mantém toda a funcionalidade habilitada. As otimizações aplicadas incluem imagens JPEG locais, preload do LCP, lazy loading por rota e divisão de vendors.
 
-O endereço público deve ser adicionado aqui e à mensagem de entrega após a publicação.
+[Endereço público na vercel](https://kurio-virid.vercel.app/?page=1)
