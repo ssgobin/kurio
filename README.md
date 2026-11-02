@@ -170,21 +170,4 @@ As configurações auditam `/` e `/nft/emerald-ape-042`, três vezes em mobile e
 
 No mobile, performance permanece abaixo da meta de 90 devido principalmente à inicialização dos runtimes obrigatórios do MSW e Socket.IO na thread principal. A auditoria mantém toda a funcionalidade habilitada. As otimizações aplicadas incluem imagens JPEG locais, preload do LCP, lazy loading por rota e divisão de vendors.
 
-## Deploy
-
-O projeto contém `vercel.json` e `netlify.toml` com fallback de SPA, permitindo acesso direto e refresh de qualquer rota. No provedor escolhido:
-
-1. use `npm run build` como comando de build;
-2. publique a pasta `dist`;
-3. mantenha `VITE_ENABLE_MSW=true`;
-4. publique exatamente o commit validado pelos testes e auditorias.
-
 O endereço público deve ser adicionado aqui e à mensagem de entrega após a publicação.
-
-## Decisões e limitações conhecidas
-
-- Os assets raster originais do Figma não puderam ser integralmente exportados por limite da conta. Foram usados JPEGs locais otimizados, sem URLs temporárias.
-- `@mswjs/socket.io-binding` permanece fixado em `0.2.0`, versão compatível com `toSocketIo(connection)`.
-- O build público deve manter o MSW ativo para preservar os fluxos REST e realtime da demonstração.
-
-Consulte [SUBMISSION_CHECKLIST.md](./SUBMISSION_CHECKLIST.md) antes da entrega final.
