@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://127.0.0.1:4175/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1--2026_11_02_15_34_40.report.html",
+    "jsonPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1--2026_11_02_15_34_40.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4175/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1--2026_11_02_15_35_21.report.html",
+    "jsonPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1--2026_11_02_15_35_21.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4175/nft/emerald-ape-042",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1-nft_emerald_ape_042-2026_11_02_15_35_41.report.html",
+    "jsonPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1-nft_emerald_ape_042-2026_11_02_15_35_41.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.95,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4175/nft/emerald-ape-042",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1-nft_emerald_ape_042-2026_11_02_15_36_19.report.html",
+    "jsonPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1-nft_emerald_ape_042-2026_11_02_15_36_19.report.json",
+    "summary": {
+      "performance": 0.96,
+      "accessibility": 0.95,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4175/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1--2026_11_02_15_35_02.report.html",
+    "jsonPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1--2026_11_02_15_35_02.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.98,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4175/nft/emerald-ape-042",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1-nft_emerald_ape_042-2026_11_02_15_36_01.report.html",
+    "jsonPath": "C:\\Users\\jv160\\Downloads\\kurio-frontend-challenge-v7\\kurio-frontend-challenge-v7\\reports\\lighthouse\\desktop\\127_0_0_1-nft_emerald_ape_042-2026_11_02_15_36_01.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.95,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  }
+]

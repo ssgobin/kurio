@@ -1,0 +1,1 @@
+export function Artwork({art=1,className='',alt='NFT artwork'}:{art?:number;className?:string;alt?:string}){const image=Math.max(1,Math.min(4,art));return <img className={`artwork ${className}`} src={`/assets/art-${image}.jpg`} alt={alt} width={800} height={800} decoding="async" fetchPriority={image===1?'high':'auto'}/>}

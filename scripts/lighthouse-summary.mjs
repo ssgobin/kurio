@@ -1,0 +1,9 @@
+import fs from 'node:fs';import path from 'node:path';
+const dir=process.argv[2];if(!dir)throw new Error('Usage: node scripts/lighthouse-summary.mjs <report-dir>');
+const files=[];const walk=d=>{if(!fs.existsSync(d))return;for(const name of fs.readdirSync(d)){const p=path.join(d,name),st=fs.statSync(p);if(st.isDirectory())walk(p);else if(name.endsWith('.json')&&name!=='summary.json')files.push(p)}};walk(dir);
+const runs=[];for(const file of files){try{const data=JSON.parse(fs.readFileSync(file,'utf8'));if(data?.categories?.performance?.score!==undefined&&data?.finalUrl)runs.push(data)}catch{/* ignore LHCI metadata JSON */}}
+const median=values=>{const v=[...values].sort((a,b)=>a-b);if(!v.length)return null;const m=Math.floor(v.length/2);return v.length%2?v[m]:(v[m-1]+v[m])/2};
+const groups={};for(const run of runs)(groups[run.finalUrl]??=[]).push(run);
+const summary={generatedAt:new Date().toISOString(),tool:'Lighthouse CI',runs:runs.length,pages:{}};
+for(const[url,items]of Object.entries(groups)){summary.pages[url]={runs:items.length,categories:{performance:median(items.map(x=>x.categories.performance.score*100)),accessibility:median(items.map(x=>x.categories.accessibility.score*100)),bestPractices:median(items.map(x=>x.categories['best-practices'].score*100)),seo:median(items.map(x=>x.categories.seo.score*100))},webVitals:{LCP:median(items.map(x=>x.audits['largest-contentful-paint']?.numericValue).filter(Number.isFinite)),CLS:median(items.map(x=>x.audits['cumulative-layout-shift']?.numericValue).filter(Number.isFinite)),TBT:median(items.map(x=>x.audits['total-blocking-time']?.numericValue).filter(Number.isFinite))}}}
+fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'summary.json'),JSON.stringify(summary,null,2));console.log(JSON.stringify(summary,null,2));

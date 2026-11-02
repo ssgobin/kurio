@@ -1,0 +1,67 @@
+{
+  "name": "kurio-frontend-challenge",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "predev": "msw init public --save",
+    "dev": "vite",
+    "prebuild": "msw init public --save",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc -b --pretty false",
+    "lint": "eslint . --max-warnings=0",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --config=playwright.visual.config.ts --update-snapshots",
+    "test:e2e:ui": "playwright test --ui",
+    "lighthouse": "npm run build && npm run lighthouse:mobile && npm run lighthouse:desktop",
+    "mock:reset": "node scripts/reset-mocks.mjs",
+    "postinstall": "msw init public --save",
+    "validate": "npm run typecheck && npm run lint && npm run build && npm run test:e2e",
+    "test:e2e:visual": "playwright test --config=playwright.visual.config.ts",
+    "lighthouse:mobile": "lhci autorun --config=.lighthouserc.mobile.json && node scripts/lighthouse-summary.mjs reports/lighthouse/mobile",
+    "lighthouse:desktop": "lhci autorun --config=.lighthouserc.desktop.json && node scripts/lighthouse-summary.mjs reports/lighthouse/desktop",
+    "test:e2e:report": "playwright show-report playwright-report",
+    "test:e2e:visual:report": "playwright show-report playwright-report-visual",
+    "submission:check": "node scripts/submission-check.mjs"
+  },
+  "dependencies": {
+    "@mswjs/socket.io-binding": "0.2.0",
+    "@tanstack/react-query": "^5.90.7",
+    "@tanstack/react-router": "^1.132.0",
+    "axios": "^1.13.1",
+    "lucide-react": "^0.548.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "socket.io-client": "^4.8.3",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "msw": "^2.11.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vite": "^7.1.12",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.5.6",
+    "autoprefixer": "^10.4.21"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

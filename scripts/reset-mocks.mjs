@@ -1,0 +1,1 @@
+console.log(`Mock reset is executed inside the browser because MSW owns the simulated server state there.\n\nWith the app open, run:\n\nawait fetch('/api/mock/reset', { method: 'POST' });\nlocation.reload();\n\nTo select a scenario:\nawait fetch('/api/mock/scenario', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({scenario:'slow'}) });`);

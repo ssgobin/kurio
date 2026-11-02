@@ -1,0 +1,8 @@
+import {test,expect,type Page} from '@playwright/test';
+async function reset(page:Page){await page.goto('/');await expect(page.locator('html')).toHaveAttribute('data-kurio-mocks','ready');await page.evaluate(async()=>{localStorage.clear();sessionStorage.clear();await fetch('/api/mock/reset',{method:'POST'})});}
+async function ready(page:Page){await expect(page.locator('html')).toHaveAttribute('data-kurio-app','ready');await expect(page.locator('[aria-label="Carregando catálogo"]')).toHaveCount(0,{timeout:8_000});}
+test.beforeEach(async({page})=>{await reset(page)});
+test('home baseline',async({page})=>{await page.goto('/');await ready(page);await expect(page).toHaveScreenshot('home.png',{fullPage:true,animations:'disabled'});});
+test('detail baseline',async({page})=>{await page.goto('/nft/emerald-ape-042');await expect(page.getByRole('heading',{name:'Emerald Ape #042'})).toBeVisible();await expect(page).toHaveScreenshot('detail.png',{fullPage:true,animations:'disabled'});});
+test('cart baseline',async({page})=>{await page.goto('/cart');await expect(page.getByRole('heading',{name:'Carrinho de NFTs'})).toBeVisible();await expect(page).toHaveScreenshot('cart.png',{fullPage:true,animations:'disabled'});});
+test('payment baseline',async({page})=>{await page.evaluate(async()=>{const response=await fetch('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:'contato@email.com',password:'kurio123'})});if(!response.ok)throw new Error(`Falha no login visual: ${response.status}`)});await page.goto('/checkout');await expect(page.getByRole('heading',{name:'Pagamento com carteira'})).toBeVisible();await expect(page).toHaveScreenshot('payment.png',{fullPage:true,animations:'disabled'});});

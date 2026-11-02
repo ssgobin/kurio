@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-11-02T15:34:22.456Z",
+  "tool": "Lighthouse CI",
+  "runs": 6,
+  "pages": {
+    "http://127.0.0.1:4174/": {
+      "runs": 3,
+      "categories": {
+        "performance": 70,
+        "accessibility": 100,
+        "bestPractices": 96,
+        "seo": 100
+      },
+      "webVitals": {
+        "LCP": 3941.9909000000007,
+        "CLS": 0,
+        "TBT": 526.5000000000005
+      }
+    },
+    "http://127.0.0.1:4174/nft/emerald-ape-042": {
+      "runs": 3,
+      "categories": {
+        "performance": 79,
+        "accessibility": 100,
+        "bestPractices": 96,
+        "seo": 100
+      },
+      "webVitals": {
+        "LCP": 3474.03795,
+        "CLS": 0,
+        "TBT": 368.4873499999999
+      }
+    }
+  }
+}
